@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Personal Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Personal Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="content">
+        <nav class="topbar">
+            <div class="title">My Personal Website</div>
+            <div class="lang-menu">
+                <div class="selected-lang">
+                    English <img src="https://flagsapi.com/US/flat/64.png" alt="English">
+                </div>
+                <ul>
+                    <li><a href="#" class="en">English <img src="https://flagsapi.com/US/flat/64.png" alt="English"></a></li>
+                    <li><a href="#" class="ar">Arabic <img src="https://flagsapi.com/AE/flat/64.png" alt="Arabic"></a></li>
+                    <li><a href="#" class="jp">Japanese <img src="https://flagsapi.com/JP/flat/64.png" alt="Japanese"></a></li>
+                </ul>
+            </div>
         </nav>
-    </header>
-    <main>
-        <p>This is the home page.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Name</p>
-    </footer>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="column-left">
+                    <h1 id="welcome-message">Welcome to My Personal Website</h1>
+                    <p id="home-page-message">This is the home page.</p>
+                </div>
+                <div class="column-right">
+                    <img src="images/logo.png" alt="Logo" class="hero-image" />
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
