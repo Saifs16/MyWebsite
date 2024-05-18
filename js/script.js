@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (aboutPageMessage) aboutPageMessage.textContent = 'これはアバウトページです。';
         }
     }
-
-
-    // Initial flag display
-    const initialFlag = selectedLang.querySelector('img') || document.createElement('img');
-    initialFlag.src = 'https://flagsapi.com/US/flat/64.png';
-    initialFlag.alt = 'English';
-    initialFlag.width = 20;
-    initialFlag.height = 20;
-    selectedLang.appendChild(initialFlag);
 });
+
+//     // Initial flag display
+//     const initialFlag = selectedLang.querySelector('img') || document.createElement('img');
+//     initialFlag.src = 'https://flagsapi.com/US/flat/64.png';
+//     initialFlag.alt = 'English';
+//     initialFlag.width = 20;
+//     initialFlag.height = 20;
+//     selectedLang.appendChild(initialFlag);
+// });
