@@ -1,0 +1,88 @@
+[
+    {
+        "id": "project1",
+        "name": "EIEV Smart Clinic",
+        "conciseDescription": "Smartifying EIEV's horse clinic system. Introduced a mobile application for customers to book appointments, and for doctors to view appointments, and for admins to manage accounts. Created an IoT system to track the vets' stables, and a web dashboard for admins.",
+        "skillsUsed": ["Android Programming", "Python Programming","3D Modeling & Printing","Android UI","Firebase Cloud","Electronics"],
+        "components": {
+            "hardware": ["ESP32", "MFRC522",""],
+            "software": ["Android Studio", "Arduino IDE", "Firebase","TinkerCard",""],
+            "equipment": ["Anker Make M5","Android Phone"]
+        },
+        "detailedDescription": "A detailed description of Project 1.",
+        "purpose": "Resolving an outdated system for EIEV's horse clinic system. Introduced a mobile application for customers and EIEV.",
+        "teamMembers": ["Saif Sultan Al Harmi", "Ahmed Abdulrahman Al Attas","Saif Majed Al Mashjari"],
+        "supervisedBy": "Dr. Arif Al Nahdi",
+        "sponsoredBy": "EIEV",
+        "dateStarted": "Aug/2023",
+        "dateConcluded": "May/2024"
+    },
+    {
+        "id": "project2",
+        "name": "Project Title 2",
+        "conciseDescription": "A brief description of Project 2.",
+        "skillsUsed": ["Skill1", "Skill2"],
+        "components": {
+            "hardware": ["Hardware1", "Hardware2"],
+            "software": ["Software1", "Software2"]
+        },
+        "detailedDescription": "A detailed description of Project 2.",
+        "purpose": "The purpose of Project 2.",
+        "teamMembers": ["Member1", "Member2"],
+        "supervisedBy": "Supervisor's Name",
+        "sponsoredBy": "Sponsor's Name",
+        "dateStarted": "MM/YYYY",
+        "dateConcluded": "MM/YYYY"
+    },
+    {
+        "id": "project3",
+        "name": "Project Title 3",
+        "conciseDescription": "A brief description of Project 3.",
+        "skillsUsed": ["Skill1", "Skill3"],
+        "components": {
+            "hardware": ["Hardware1", "Hardware2"],
+            "software": ["Software1", "Software2"]
+        },
+        "detailedDescription": "A detailed description of Project 3.",
+        "purpose": "The purpose of Project 3.",
+        "teamMembers": ["Member1", "Member2"],
+        "supervisedBy": "Supervisor's Name",
+        "sponsoredBy": "Sponsor's Name",
+        "dateStarted": "MM/YYYY",
+        "dateConcluded": "MM/YYYY"
+    },
+    {
+        "id": "project3",
+        "name": "Project Title 3",
+        "conciseDescription": "A brief description of Project 3.",
+        "skillsUsed": ["Skill1", "Skill3"],
+        "components": {
+            "hardware": ["Hardware1", "Hardware2"],
+            "software": ["Software1", "Software2"]
+        },
+        "detailedDescription": "A detailed description of Project 3.",
+        "purpose": "The purpose of Project 3.",
+        "teamMembers": ["Member1", "Member2"],
+        "supervisedBy": "Supervisor's Name",
+        "sponsoredBy": "Sponsor's Name",
+        "dateStarted": "MM/YYYY",
+        "dateConcluded": "MM/YYYY"
+    },
+    {
+        "id": "project3",
+        "name": "Project Title 3",
+        "conciseDescription": "A brief description of Project 3.",
+        "skillsUsed": ["Skill1", "Skill3"],
+        "components": {
+            "hardware": ["Hardware1", "Hardware2"],
+            "software": ["Software1", "Software2"]
+        },
+        "detailedDescription": "A detailed description of Project 3.",
+        "purpose": "The purpose of Project 3.",
+        "teamMembers": ["Member1", "Member2"],
+        "supervisedBy": "Supervisor's Name",
+        "sponsoredBy": "Sponsor's Name",
+        "dateStarted": "MM/YYYY",
+        "dateConcluded": "MM/YYYY"
+    }
+]

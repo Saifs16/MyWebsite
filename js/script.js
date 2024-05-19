@@ -76,13 +76,79 @@ document.addEventListener('DOMContentLoaded', function() {
             if (aboutPageMessage) aboutPageMessage.textContent = 'これはアバウトページです。';
         }
     }
-});
 
-//     // Initial flag display
-//     const initialFlag = selectedLang.querySelector('img') || document.createElement('img');
-//     initialFlag.src = 'https://flagsapi.com/US/flat/64.png';
-//     initialFlag.alt = 'English';
-//     initialFlag.width = 20;
-//     initialFlag.height = 20;
-//     selectedLang.appendChild(initialFlag);
-// });
+    const projectsSection = document.querySelector('.projects-section');
+    if (projectsSection) {
+        // Load skill colors from skills.json and then load projects
+        fetch('json/skills.json')
+            .then(response => response.json())
+            .then(skillColors => {
+                console.log('Skill colors loaded:', skillColors);  // Add logging for skill colors
+                // Load projects.json and populate project cards
+                fetch('json/projects.json')
+                    .then(response => response.json())
+                    .then(projects => {
+                        console.log('Projects loaded:', projects);  // Add logging for projects
+                        const limitedProjects = projects.slice(0, 3); // Limit to the first 3 projects
+                        limitedProjects.forEach(project => {
+                            const projectCard = document.createElement('div');
+                            projectCard.className = 'project-card';
+
+                            const skillsHTML = project.skillsUsed.map(skill => {
+                                const skillColor = skillColors[skill] || '#000';  // Default to black if no color is defined
+                                return `<span class="skill-pill" style="background-color:${skillColor};">${skill}</span>`;
+                            }).join(' ');
+
+                            projectCard.innerHTML = `
+                                <img src="images/placeholder.png" alt="${project.name}">
+                                <div class="card-content">
+                                    <h3>${project.name}</h3>
+                                    <p>${project.conciseDescription}</p>
+                                    <div class="skills">${skillsHTML}</div>
+                                    <div class="date">${project.dateStarted} - ${project.dateConcluded}</div>
+                                </div>
+                            `;
+
+                            let isLongPress = false;
+                            let pressTimer;
+
+                            projectCard.addEventListener('mousedown', () => {
+                                pressTimer = setTimeout(() => {
+                                    isLongPress = true;
+                                }, 250);
+                            });
+
+                            projectCard.addEventListener('mouseup', () => {
+                                clearTimeout(pressTimer);
+                                if (!isLongPress) {
+                                    window.location.href = `project-detail.html?id=${project.id}`;
+                                }
+                                isLongPress = false;
+                            });
+
+                            projectCard.querySelectorAll('.skill-pill').forEach(skillPill => {
+                                skillPill.addEventListener('mousedown', (event) => {
+                                    event.stopPropagation();
+                                });
+                                skillPill.addEventListener('mouseup', (event) => {
+                                    event.stopPropagation();
+                                });
+                                skillPill.addEventListener('click', (event) => {
+                                    event.stopPropagation();
+                                });
+                            });
+
+                            projectsSection.appendChild(projectCard);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error loading projects:', error);  // Log errors
+                        alert('Failed to load projects: ' + error.message);  // Show alert on error
+                    });
+            })
+            .catch(error => {
+                console.error('Error loading skills:', error);  // Log errors
+                alert('Failed to load skill colors: ' + error.message);  // Show alert on error
+            });
+    }
+});

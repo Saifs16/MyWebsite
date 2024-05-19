@@ -196,22 +196,28 @@ body {
     }
   }
 
+
+  /* Style for the projects section */
+
 .projects-section {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+/* Style for individual project cards */
 .project-card {
-    border: 1px solid #ccc;
+    background-color: #f8cc1c; /* Set the card background color to gray */
+    border: 1px solid #aaa;
     border-radius: 10%;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     margin: 10px;
     width: 30%;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
 }
-
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
@@ -228,6 +234,31 @@ body {
 
 .project-card .card-content h3 {
     margin-top: 0;
+}
+.project-card .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.project-card .skill-pill {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    cursor:pointer;
+}
+.project-card .skill-pill:hover{
+    transform: translateY(-1px);
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+
+}
+.project-card .date {
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+    font-size: 0.8rem;
+    color: #666;
 }
 .social-link {
     display: inline-block;
