@@ -51,7 +51,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding-right: 2rem; /* Added padding-right to create space on the right */
+    padding-right: 2rem;
 }
 
 .topbar .title {
@@ -64,10 +64,10 @@ body {
     width: auto;
     text-align: right;
     font-weight: bold;
-    margin-left: auto; /* Aligns the menu to the right */
+    margin-left: auto;
     position: relative;
-    display: flex; /* Added to enable flexbox */
-    align-items: center; /* Added to vertically center items */
+    display: flex;
+    align-items: center;
 }
 
 .lang-menu .selected-lang {
@@ -94,7 +94,7 @@ body {
     right: 0px;
     width: auto;
     border-radius: 5px;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .lang-menu ul li {
@@ -175,30 +175,65 @@ body {
 @media screen and (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .column-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .column-left p {
+        font-size: 1.2rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .topbar .title {
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .lang-menu {
+        justify-content: flex-end;
+        width: 100%;
     }
 }
+
 .glow {
     font-size: 80px;
     text-align: center;
     -webkit-animation: glow 3s ease-in-out infinite alternate;
     -moz-animation: glow 3s ease-in-out infinite alternate;
     animation: glow 3s 1s ease-in-out infinite alternate;
-  }
-  @keyframes glow {
+}
+
+@keyframes glow {
     0% {
-      text-shadow: 0 0 10px #ffeb99, 0 0 20px #ffeb99, 0 0 30px #ffeb99, 0 0 40px #ffeb99, 0 0 50px #ffeb99, 0 0 60px #ffeb99, 0 0 70px #ffeb99;
+        text-shadow: 0 0 10px #ffeb99, 0 0 20px #ffeb99, 0 0 30px #ffeb99, 0 0 40px #ffeb99, 0 0 50px #ffeb99, 0 0 60px #ffeb99, 0 0 70px #ffeb99;
     }
     50% {
-      text-shadow: 0 0 20px #ffeb99, 0 0 30px #ffcc29, 0 0 40px #ffcc29, 0 0 50px #ffcc29, 0 0 60px #ffcc29, 0 0 70px #ffcc29, 0 0 80px #ffcc29;
+        text-shadow: 0 0 20px #ffeb99, 0 0 30px #ffcc29, 0 0 40px #ffcc29, 0 0 50px #ffcc29, 0 0 60px #ffcc29, 0 0 70px #ffcc29, 0 0 80px #ffcc29;
     }
     100% {
-      text-shadow: 0 0 20px #ffcc29, 0 0 30px #ffcc29, 0 0 40px #ffcc29, 0 0 50px #ffcc29, 0 0 60px #ffcc29, 0 0 70px #ffcc29, 0 0 80px #ffcc29;
+        text-shadow: 0 0 20px #ffcc29, 0 0 30px #ffcc29, 0 0 40px #ffcc29, 0 0 50px #ffcc29, 0 0 60px #ffcc29, 0 0 70px #ffcc29, 0 0 80px #ffcc29;
     }
-  }
+}
 
-
-  /* Style for the projects section */
-
+/* Style for the projects section */
 .projects-section {
     display: flex;
     justify-content: space-around;
@@ -207,9 +242,10 @@ body {
 
 /* Style for individual project cards */
 .project-card {
-    background-color: #f8cc1c; /* Set the card background color to gray */
+    background-color: #f8cc1c;
     border: 1px solid #aaa;
-    border-radius: 10%;
+    border-radius:3rem;
+    max-height: 1000px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     margin: 10px;
     width: 30%;
@@ -218,9 +254,10 @@ body {
     position: relative;
     cursor: pointer;
 }
+
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
@@ -235,24 +272,27 @@ body {
 .project-card .card-content h3 {
     margin-top: 0;
 }
+
 .project-card .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
+
 .project-card .skill-pill {
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.9rem;
     display: inline-block;
-    cursor:pointer;
+    cursor: pointer;
 }
-.project-card .skill-pill:hover{
-    transform: translateY(-1px);
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
 
+.project-card .skill-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
 }
+
 .project-card .date {
     position: absolute;
     bottom: 10px;
@@ -260,6 +300,7 @@ body {
     font-size: 0.8rem;
     color: #666;
 }
+
 .social-link {
     display: inline-block;
     margin-top: 10px;
@@ -269,6 +310,7 @@ body {
     margin-right: 8px;
     color: #000;
 }
+
 .centered-heading {
     text-align: center;
 }
@@ -276,6 +318,15 @@ body {
 @media screen and (max-width: 768px) {
     .project-card {
         width: 100%;
+        border-radius: 2rem;
+    }
+
+    .project-card .card-content {
+        padding: 20px;
     }
 }
-
+@media screen and (max-width: 770px) {
+    .project-card {
+        border-radius: 1rem;
+    }
+}
