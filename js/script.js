@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (aboutMessage) aboutMessage.textContent = 'About Me';
             if (aboutPageMessage) aboutPageMessage.textContent = 'This is the about page.';
         } else if (language === 'ar') {
-            if (welcomeMessage) welcomeMessage.textContent = 'مرحبا بكم في موقعي الشخصي';
-            if (homePageMessage) homePageMessage.textContent = 'هذه هي الصفحة الرئيسية.';
-            if (aboutMessage) aboutMessage.textContent = 'عني';
-            if (aboutPageMessage) aboutPageMessage.textContent = 'هذه هي صفحة حول.';
+            if (welcomeMessage) welcomeMessage.textContent = 'حياكم بصفحتي الخاصة';
+            if (homePageMessage) homePageMessage.textContent = '.هذه هي الصفحة الرئيسية';
+            if (aboutMessage) aboutMessage.textContent = 'السيرة الذاتية';
+            if (aboutPageMessage) aboutPageMessage.textContent = '.معلومات عني';
         } else if (language === 'jp') {
             if (welcomeMessage) welcomeMessage.textContent = '私の個人サイトへようこそ';
             if (homePageMessage) homePageMessage.textContent = 'これはホームページです。';
@@ -151,4 +151,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Failed to load skill colors: ' + error.message);  // Show alert on error
             });
     }
+
+        // Dark mode toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle .material-icons');
+
+        darkModeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'light_mode';
+                darkModeToggle.style.color = 'yellow';
+            } else {
+                darkModeToggle.textContent = 'dark_mode';
+                darkModeToggle.style.color = '';
+            }
+        });
 });
