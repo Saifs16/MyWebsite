@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <strong>Sponsored by:</strong> ${project.sponsoredBy}</p>
                     <p>${project.detailedDescription}</p>
                     <p><strong>Skills used:</strong> ${project.skillsUsed.join(', ')}</p>
-                    <p><strong>Hardware components:</strong> ${project.components.hardware.join(', ')}</p>
-                    <p><strong>Software components:</strong> ${project.components.software.join(', ')}</p>
+                    <p><strong>Hardware utilized:</strong> ${project.components.hardware.join(', ')}</p>
+                    <p><strong>Software utilized:</strong> ${project.components.software.join(', ')}</p>
                     <p><strong>Purpose:</strong> ${project.purpose}</p>
                     <p><strong>Date started:</strong> ${project.dateStarted}<br>
                     <strong>Date concluded:</strong> ${project.dateConcluded}</p>

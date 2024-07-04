@@ -166,3 +166,58 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 });
+// Pop up functions -- Remove once website reaches completion
+document.addEventListener("DOMContentLoaded", function() {
+    const darkModeToggle = document.querySelector(".dark-mode-toggle");
+
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const darkModeEnabled = document.body.classList.contains("dark-mode");
+        localStorage.setItem("darkMode", darkModeEnabled);
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("close-popup");
+    const overlay = document.getElementById("overlay");
+
+    function showPopup() {
+        popup.style.display = "flex";
+        overlay.style.display = "block"; // Show the overlay
+        document.body.style.overflow = "hidden"; // Prevent scrolling on the body
+    }
+
+    function hidePopup() {
+        popup.style.display = "none";
+        overlay.style.display = "none"; // Hide the overlay
+        document.body.style.overflow = "auto"; // Restore scrolling on the body
+    }
+
+    closePopup.addEventListener("click", hidePopup);
+
+    // Check if popup should be shown
+    if (!sessionStorage.getItem("popupClosed")) {
+        showPopup(); // Call your function to show the popup
+
+        // Set a click event listener on the close button inside the popup
+        document.getElementById("popupCloseButton").addEventListener("click", function() {
+            // Mark the popup as closed in sessionStorage
+            sessionStorage.setItem("popupClosed", "true");
+            hidePopup();
+        });
+    }
+
+    // Reset popupShown if the session has ended or the page is refreshed
+    if (!sessionStorage.getItem("popupShown")) {
+        sessionStorage.setItem("popupShown", "true");
+    } else {
+        sessionStorage.removeItem("popupClosed");
+    }
+});
+
